@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "8"
+cache:
+  directories:
+    - node_modules
+
+branches:
+  only:
+    - development
+deploy:
+  provider: heroku
+  api_key:
+    secure: f/+Z3hXeyesuz28DnNU3eb3ma382I3uZApmy2rvz+N/nvweX6cHz4yZRcphvsT7Sfq61pr7n9xBoBPXC8njyoKUA9Cu4xFPMtiLH3nfhfX/yMUKex1IndYj4yJdu8TIRk00/fn1lyfVvmnKTr+hr8lPkGZl4x3uGTWfiYGusvbJ5lWm7FxNyrSFxKeImpOp4+SHSSXIwJn3VrcaWEtZoJlsPnzGsZ+YE5E1T0P55aP6+wjKMOKE41gZYh5F2JvsCgk9ceC6gVDLKpuBmLKt/Iriml6kPNdbkz5d23JwPyR5a9wnCfdL65b2hpYKV2rY3GUwYt6s0/xx1GQWI9AgKhj0bWHayIQElWyT8BimmvRt8VhFQ1Yqh6GsTxbAfIrjC0IVgayMj8B/o3FZHqVdeW5v51QfJSMzBH/yhfVfCICpIyCF+z1yrQEtLSNs7Cy6wykyejtpCufKckJ+OfDoIq2tjt0OaPK1Rr7q/5hW0ycB+3WrNgGgnON4gXq6/A+6oye3z2oMwLUq7OCCffb5HxQV67FYBDOnUXZNt5yvoVJJLNGQedODAC6CcNC/ljsN/ucO7ejpHwyhoq4wg3FwdMYYs5Ra07DNOCApJVCLYfVPXNzy//oFcwRqjBoWBONNkO01paVJ2vZ+4N2ktOMqvAytUSFCQPYyVXdke+T7ar58=
