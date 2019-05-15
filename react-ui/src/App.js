@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   const [message, setMessage] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
-  const [url, setUrl] = useState('/api');
+  const [url] = useState('/api');
 
   const fetchData = useCallback(() => {
     fetch(url)
@@ -48,7 +48,7 @@ function App() {
         </strong>{' »'}</p>
         <p><a
           className="App-link"
-          href="https://github.com/mars/heroku-cra-node"
+          href="https://github.com/VitFL/vitfl-portfolio.git"
         >
           React + Node deployment on Heroku
         </a></p>
