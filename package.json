@@ -6,10 +6,10 @@
     "node": "10.x"
   },
   "scripts": {
-    "start": "node server",
-    "lint": "eslint .",
     "test-all": "npm test && cd react-ui && npm test",
-    "install-all": "npm i && cd react-ui && npm i",
+    "client": "cd react-ui && npm start",
+    "server": "nodemon server/index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client \"",
     "build": "npm install && cd react-ui && npm install && npm run build"
   },
   "cacheDirectories": [
@@ -30,5 +30,8 @@
     "react"
   ],
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.0"
+  }
 }
