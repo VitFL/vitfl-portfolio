@@ -7,14 +7,17 @@
   },
   "scripts": {
     "start": "node server",
-    "build": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "lint": "eslint .",
+    "test-all": "npm test && cd react-ui && npm test",
+    "install-all": "npm i && cd react-ui && npm i",
+    "build": "npm install && cd react-ui && npm install && npm run build"
   },
   "cacheDirectories": [
     "node_modules",
     "react-ui/node_modules"
   ],
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.0"
   },
   "repository": {
     "type": "git",
