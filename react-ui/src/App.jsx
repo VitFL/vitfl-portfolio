@@ -1,7 +1,7 @@
-import React/* , { useContext, useState, useEffect } */ from "react";
+import React/* , { useContext, useState, useEffect } */ from 'react';
 // import { StoreContext } from "./context/StoreContext";
 // import { types } from "./context/reducers";
-import MainView from "./components/MainView/MainView";
+import MainView from './components/MainView/MainView';
 
 function App() {
   // const { state, dispatch, actions } = useContext(StoreContext);

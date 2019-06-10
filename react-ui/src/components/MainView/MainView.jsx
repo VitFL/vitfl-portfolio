@@ -1,8 +1,9 @@
 import React/* , { useCallback, useEffect, useState } */ from 'react';
 // import logo from "../../assets/img/logo.png";
-import Header from "../Header/Header";
-function MainView() {
+import Header from '../Header/Header';
+import './main.scss';
 
+function MainView() {
   return (
     <Header />
   );
@@ -67,7 +68,6 @@ function MainView() {
   //     </header>
   //   </div>
   // );
-
 }
 
 export default MainView;
