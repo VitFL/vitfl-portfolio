@@ -1,12 +1,10 @@
-import React/* , { useCallback, useEffect, useState } */ from 'react';
+import React /* , { useCallback, useEffect, useState } */ from 'react';
 // import logo from "../../assets/img/logo.png";
-import Header from '../Header/Header';
+import NavBar from '../NavBar/NavBar';
 import './main.scss';
 
 function MainView() {
-  return (
-    <Header />
-  );
+  return <NavBar />;
 
   // const [message, setMessage] = useState(null);
   // const [isFetching, setIsFetching] = useState(false);
