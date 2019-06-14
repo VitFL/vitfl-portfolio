@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "express": "^4.17.0",
-    "mongoose": "^5.5.11"
+    "mongoose": "^5.5.11",
+    "node-sass": "^4.11.0"
   },
   "repository": {
     "type": "git",
