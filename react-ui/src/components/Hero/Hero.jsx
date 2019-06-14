@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Container, Row, Col, Button,
 } from 'reactstrap';
 import './Hero.scss';
 
 const Hero = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleNavbar = () => setIsOpen(!isOpen);
 
   return (
     <Container
