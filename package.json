@@ -6,10 +6,11 @@
     "node": "10.x"
   },
   "scripts": {
-    "client": "cd react-ui && npm start",
+    "client": "npm start --prefix react-ui",
     "server": "nodemon server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client \"",
-    "build": "npm install && cd react-ui && npm install && npm run build"
+    "install-deps": "npm install && npm install --prefix react-ui",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-ui && npm run build --prefix react-ui"
   },
   "cacheDirectories": [
     "node_modules",
