@@ -12,10 +12,6 @@
     "install-deps": "npm install && npm install --prefix react-ui",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-ui && npm run build --prefix react-ui"
   },
-  "cacheDirectories": [
-    "node_modules",
-    "react-ui/node_modules"
-  ],
   "dependencies": {
     "express": "^4.17.0",
     "mongoose": "^5.5.11"
