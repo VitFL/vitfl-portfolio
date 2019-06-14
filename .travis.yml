@@ -4,9 +4,6 @@ node_js:
 cache:
   directories:
     - node_modules
-script:
-  - npm run install-all
-  - npm run test-all
 branches:
   only:
     - master
