@@ -16,7 +16,7 @@ const NavBar = () => {
   const toggleNavbar = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <>
       <Navbar color="dark" dark expand="md">
         <NavbarBrand href="/" className="mr-auto navbar-logo" />
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
@@ -38,14 +38,14 @@ const NavBar = () => {
               </NavLink>
             </NavItem>
             <NavItem className="my-auto ml-4">
-              <Button color="outline-accent" size="sm">
+              <Button color="outline-accent text-uppercase" size="sm">
                 Resume
               </Button>
             </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
+    </>
   );
 };
 

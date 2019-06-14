@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Mono');
-@import '../../node_modules/bootstrap-scss/_functions.scss';
-@import '../../node_modules/bootstrap-scss/_variables.scss';
-@import '../../node_modules/bootstrap-scss/_mixins.scss';
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto+Mono");
+@import "../../node_modules/bootstrap-scss/_functions.scss";
+@import "../../node_modules/bootstrap-scss/_variables.scss";
+@import "../../node_modules/bootstrap-scss/_mixins.scss";
 
 // Customization of Bootstrap vars
 $theme-colors: (
   "primary": #252627,
   "secondary": #252627,
   "dark": #181818,
-  "accent": #51D3F2,
+  "light": #8d8d8d,
+  "accent": #51d3f2
 );
 
-$font-family-sans-serif: 'Lato', sans-serif;
-$font-family-monospace: 'Roboto Mono', monospace;
+$font-family-sans-serif: "Lato", sans-serif;
+$font-family-monospace: "Roboto Mono", monospace;
 
-
-@import '../../node_modules/bootstrap-scss/bootstrap.scss';
+@import "../../node_modules/bootstrap-scss/bootstrap.scss";

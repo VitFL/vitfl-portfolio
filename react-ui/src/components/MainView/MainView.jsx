@@ -1,10 +1,16 @@
 import React /* , { useCallback, useEffect, useState } */ from 'react';
 // import logo from "../../assets/img/logo.png";
 import NavBar from '../NavBar/NavBar';
-import './main.scss';
+import Hero from '../Hero/Hero';
+import './MainView.scss';
 
 function MainView() {
-  return <NavBar />;
+  return (
+    <>
+      <NavBar />
+      <Hero />
+    </>
+  );
 
   // const [message, setMessage] = useState(null);
   // const [isFetching, setIsFetching] = useState(false);
