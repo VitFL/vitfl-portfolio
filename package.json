@@ -6,6 +6,7 @@
     "node": "10.x"
   },
   "scripts": {
+    "start": "node server/index.js",
     "client": "npm start --prefix react-ui",
     "server": "nodemon server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client \"",
