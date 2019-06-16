@@ -7,4 +7,6 @@ body {
   font-family: var(--font-family-sans-serif);
   color: var(--white);
   overflow-x: hidden;
+  background-color: var(--primary);
+  counter-reset: section 0;
 }

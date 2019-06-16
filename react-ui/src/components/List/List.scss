@@ -1,0 +1,16 @@
+.list-item {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-family: var(--font-family-monospace);
+  font-size: 0.9rem;
+  list-style: none;
+  &::before {
+    content: "\25B9";
+    position: absolute;
+    left: 0px;
+    color: #00d2f1;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+}
