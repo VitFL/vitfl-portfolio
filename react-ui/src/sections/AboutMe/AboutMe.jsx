@@ -5,14 +5,15 @@ import List from '../../components/List/List';
 import photo from '../../assets/img/profile-photo.jpg';
 import './AboutMe.scss';
 
+const listItems = [
+  'Responsive HTML/CSS',
+  'JavaScript (vanilla, jQuery, React.js and other frameworks)',
+  'High-level user experience',
+  'Search engine optimization',
+  'Performance',
+];
+
 const AboutMe = () => {
-  const listItems = [
-    'Responsive HTML/CSS',
-    'JavaScript (vanilla, jQuery, React.js and other frameworks)',
-    'High-level user experience',
-    'Search engine optimization',
-    'Performance',
-  ];
   return (
     <Container className="container-hero bg-primary">
       <SectionHeader title="About Me" />
