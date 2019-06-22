@@ -2,6 +2,7 @@
 
 .section-header {
   display: flex;
+  margin-left: -1rem;
   align-items: center;
   white-space: nowrap;
   font-size: 1.6rem;
@@ -21,7 +22,7 @@
     position: relative;
     height: 1px;
     width: 300px;
-    background-color: var(--light);
+    background-color: var(--gray-dark);
     margin-left: 20px;
   }
 }

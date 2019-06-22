@@ -2,6 +2,8 @@ import React /* , { useCallback, useEffect, useState } */ from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Hero from './sections/Hero/Hero';
 import AboutMe from './sections/AboutMe/AboutMe';
+import Portfolio from './sections/Portfolio/Portfolio';
+import Footer from './sections/Footer/Footer';
 import './App.scss';
 
 function App() {
@@ -10,6 +12,8 @@ function App() {
       <NavBar />
       <Hero />
       <AboutMe />
+      <Portfolio />
+      <Footer />
     </>
   );
 

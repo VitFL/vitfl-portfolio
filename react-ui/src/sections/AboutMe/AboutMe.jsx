@@ -15,13 +15,9 @@ const AboutMe = () => {
   ];
   return (
     <Container className="container-hero bg-primary">
+      <SectionHeader title="About Me" />
       <Row>
-        <Col className="col-xl-5 offset-xl-1 p-0">
-          <SectionHeader title="About Me" />
-        </Col>
-      </Row>
-      <Row>
-        <Col className="col-xl-5 offset-xl-1 p-0">
+        <Col className="col-xl-5 p-0">
           <p>
             I am a web developer based in Lviv (Ukraine) who enjoys building responsive websites and
             web-applications, that allow the user to experience website in the best and most
@@ -32,7 +28,7 @@ const AboutMe = () => {
           <p>Clients often approach me when they need a developer who can provide:</p>
           <List items={listItems} />
         </Col>
-        <Col className="col-xl-5 offset-xl-1 p-0">
+        <Col className="col-xl-5p-0">
           <img src={photo} className="profile-photo" alt="portrait" />
         </Col>
       </Row>
