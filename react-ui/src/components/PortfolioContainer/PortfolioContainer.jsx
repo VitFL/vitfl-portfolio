@@ -5,13 +5,13 @@ import PortfolioItem from './PortfolioItem';
 const PortfolioContainer = () => (
   <Container className="mt-3">
     <Row>
-      <Col className="col-3">
+      <Col className="col-4">
         <PortfolioItem />
       </Col>
-      <Col className="col-3">
+      <Col className="col-4">
         <PortfolioItem />
       </Col>
-      <Col className="col-3">
+      <Col className="col-4">
         <PortfolioItem />
       </Col>
     </Row>
