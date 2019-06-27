@@ -2,7 +2,8 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PortfolioItem from './PortfolioItem';
 
-const PortfolioContainer = () => (
+const PortfolioContainer = () => {
+  return (
   <Container className="mt-3">
     <Row>
       <Col className="col-4">
@@ -16,6 +17,6 @@ const PortfolioContainer = () => (
       </Col>
     </Row>
   </Container>
-);
+)};
 
 export default PortfolioContainer;
