@@ -1,0 +1,28 @@
+.main-nav-item {
+  counter-increment: item 1;
+  font-size: 0.7rem;
+  &::before {
+    content: "0" counter(item) ".";
+    text-align: right;
+    color: var(--accent);
+    font-size: 0.7rem;
+  }
+}
+
+.navbar-logo {
+  height: 45px;
+  width: 45px;
+  background: url("../../../assets/img/logo.png");
+  background-size: contain;
+}
+
+svg.login-icon {
+  path {
+    fill: var(--white);
+  }
+  &:hover {
+    path {
+      fill: var(--accent);
+    }
+  }
+}

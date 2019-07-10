@@ -5,20 +5,20 @@ const Schema = mongoose.Schema;
 let Hero = new Schema(
   {
     headerFirst: {
-      type: String,
-      required: true
+      type: String
+      // required: true
     },
     headerSecond: {
-      type: String,
-      required: true
+      type: String
+      // required: true
     },
     slogan: {
-      type: String,
-      required: true
+      type: String
+      // required: true
     },
     description: {
-      type: String,
-      required: true
+      type: String
+      // required: true
     }
   },
   {

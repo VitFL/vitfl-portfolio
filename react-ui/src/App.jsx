@@ -1,82 +1,42 @@
-import React /* , { useCallback, useEffect, useState } */ from 'react';
-import NavBar from './components/NavBar/NavBar';
-import Hero from './sections/Hero/Hero';
-import AboutMe from './sections/AboutMe/AboutMe';
-import Portfolio from './sections/Portfolio/Portfolio';
-import Footer from './sections/Footer/Footer';
+import React, { useCallback } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useMappedState } from 'redux-react-hook';
+import Home from './components/Home/Home';
+import Signup from './components/Signup/Signup';
+import Login from './components/Login/Login';
+import NotFound from './components/NotFound/NotFound';
+import NavBar from './components/Home/NavBar/NavBar';
+import Footer from './components/Home/sections/Footer/Footer';
+import useWithAuthenticate from './components/WithAuthenticate/WithAuthenticate';
+import * as routes from './constants/routes';
 import './App.scss';
 
 function App() {
-  return (
-    <>
-      <NavBar />
-      <Hero />
-      <AboutMe />
-      <Portfolio />
-      <Footer />
-    </>
+  useWithAuthenticate();
+
+  const mapState = useCallback(
+    state => ({
+      loading: state.sessionState.loading,
+    }),
+    [],
   );
 
-  // const [message, setMessage] = useState(null);
-  // const [isFetching, setIsFetching] = useState(false);
-  // const [url] = useState('/api');
+  const { loading } = useMappedState(mapState);
 
-  // const fetchData = useCallback(() => {
-  //   fetch(url)
-  //     .then(response => {
-  //       if (!response.ok) {
-  //         throw new Error(`status ${response.status}`);
-  //       }
-  //       return response.json();
-  //     })
-  //     .then(json => {
-  //       setMessage(json.message);
-  //       setIsFetching(false);
-  //     }).catch(e => {
-  //       setMessage(`API call failed: ${e}`);
-  //       setIsFetching(false);
-  //     })
-  // }, [url]);
+  if (loading) return <h1>Loading...</h1>;
 
-  // useEffect(() => {
-  //   setIsFetching(true);
-  //   fetchData();
-  // }, [fetchData]);
-
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       { process.env.NODE_ENV === 'production' ?
-  //           <p>
-  //             This is a production build from create-react-app.
-  //           </p>
-  //         : <p>
-  //             Edit <code>src/App.js</code> and save to reload.
-  //           </p>
-  //       }
-  //       <p>{'« '}<strong>
-  //         {isFetching
-  //           ? 'Fetching message from API'
-  //           : message}
-  //       </strong>{' »'}</p>
-  //       <p><a
-  //         className="App-link"
-  //         href="https://github.com/VitFL/vitfl-portfolio.git"
-  //       >
-  //         React + Node deployment on Heroku
-  //       </a></p>
-  //       <p><a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a></p>
-  //     </header>
-  //   </div>
-  // );
+  return (
+    <Router basename={process.env.PUBLIC_URL}>
+      <NavBar />
+      <Switch>
+        <Route exact path={routes.HOME} component={() => <Home />} />
+        <Route exact path={routes.SIGN_UP} component={() => <Signup />} />
+        <Route exact path={routes.LOGIN} component={() => <Login />} />
+        <Route component={NotFound} />
+      </Switch>
+      <Footer />
+    </Router>
+  );
 }
 
 export default App;

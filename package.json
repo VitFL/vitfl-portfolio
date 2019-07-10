@@ -6,17 +6,24 @@
     "node": "10.x"
   },
   "scripts": {
-    "start": "node server/index.js",
+    "start": "nodemon --exec babel-node server/index.js",
     "client": "npm start --prefix react-ui",
-    "server": "nodemon server/index.js",
+    "server": "nodemon --exec babel-node server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client \"",
     "install-deps": "npm install && npm install --prefix react-ui",
     "heroku-postbuild": "npm install --prefix react-ui && npm run build --prefix react-ui"
   },
   "dependencies": {
-    "express": "^4.17.0",
-    "mongoose": "^5.5.11",
-    "node-sass": "^4.11.0"
+    "gravatar": "^1.8.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.2"
   },
   "repository": {
     "type": "git",
@@ -30,7 +37,11 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.19.0"
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.19.1"
   }
 }
