@@ -1,15 +1,37 @@
-import React from 'react';
-import useAxios from 'axios-hooks';
-import {
-  Container, Row, Col, Button,
-} from 'reactstrap';
-import './Hero.scss';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Container, Row, Col, Button } from "reactstrap";
+import "./Hero.scss";
 
 const Hero = () => {
-  // const [{ response, loading, error }, refetch] = useAxios('http://localhost:5000/hero/');
-  const [{
-    headerFirst, headerSecond, slogan, description,
-  }] = [{}];
+  const [
+    { headerFirst, headerSecond, slogan, description },
+    setHero
+  ] = useState({});
+  useEffect(() => {
+    (async () => {
+      const requestBody = {
+        query: `
+            query {
+              fetchHero {
+                _id,
+                headerFirst,
+                headerSecond,
+                slogan,
+                description
+              }
+            }
+          `
+      };
+
+      const { data } = await axios.post(
+        "http://localhost:5000/graphql",
+        requestBody
+      );
+      setHero(data.data.fetchHero);
+    })();
+  });
+
   return (
     <Container className="container-hero bg-primary d-flex flex-column justify-content-center">
       <Row>

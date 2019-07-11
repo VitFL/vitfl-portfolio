@@ -6,6 +6,15 @@ type User {
   email: String!
   token: String!
 }
+
+type Hero {
+  _id: ID!
+  headerFirst: String!
+  headerSecond: String!
+  slogan: String!
+  description: String!
+}
+
 input UserInput {
   email: String!
   password: String!
@@ -14,6 +23,7 @@ input UserInput {
 type RootQuery {
   login(email: String!, password: String!): User
   verifyToken(token: String!): User
+  fetchHero: Hero
 }
 type RootMutation {
   createUser(userInput: UserInput): User
