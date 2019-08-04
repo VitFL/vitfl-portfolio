@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import {
-  Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Button,
 } from 'reactstrap';
 import './NavBar.scss';
 
@@ -29,6 +36,11 @@ const NavBar = () => {
               <NavLink href="#contact" className="d-inline">
                 Contact
               </NavLink>
+            </NavItem>
+            <NavItem className="my-auto ml-4">
+              <Button color="outline-accent" size="sm">
+                Resume
+              </Button>
             </NavItem>
           </Nav>
         </Collapse>
