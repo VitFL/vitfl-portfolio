@@ -15,7 +15,7 @@ const listItems = [
 
 const AboutMe = () => {
   return (
-    <Container className="container-hero bg-primary">
+    <Container className="section-container bg-primary">
       <SectionHeader title="About Me" />
       <Row>
         <Col className="col-xl-5 p-0">

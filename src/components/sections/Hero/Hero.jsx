@@ -4,11 +4,10 @@ import {
 } from 'reactstrap';
 import HeroHeading from './HeroHeading';
 import HeroDescription from './HeroDescription';
-import './Hero.scss';
 
 const Hero = () => {
   return (
-    <Container className="container-hero bg-primary d-flex flex-column justify-content-center">
+    <Container className="section-container bg-primary d-flex flex-column justify-content-center">
         <HeroHeading className="text-monospace text-accent" text="Hi, my name is" minimal />
         <HeroHeading text="Vitaliy Tkachuk" />
         <HeroHeading className="text-light" text="I build things for the web." secondary />

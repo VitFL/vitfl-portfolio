@@ -3,6 +3,8 @@
 
 import React, { useState, useEffect } from 'react';
 import fetchJsonp from 'fetch-jsonp';
+import { Container } from 'reactstrap';
+import SectionHeader from '@atoms/SectionHeader/SectionHeader';
 import {
   CODING_ACTIVITY_7DAYS,
   LANGUAGES_7DAYS,
@@ -17,6 +19,7 @@ import {
   URL_LANGUAGES_30DAYS,
   URL_EDITORS_30DAYS,
 } from '@constants/stats';
+import StatsContainer from './StatsContainer';
 
 const getRequestURL = (type) => {
   let requestURL;
@@ -63,7 +66,15 @@ const Stats = () => {
     };
     fetchData();
   }, []);
-  return JSON.stringify(wakatimeJSON);
+  // JSON.stringify(wakatimeJSON);
+  return (
+    <>
+      <Container className="section-container bg-primary">
+        <SectionHeader title="My activity stats" />
+        <StatsContainer />
+      </Container>
+    </>
+  );
 };
 
 export default Stats;

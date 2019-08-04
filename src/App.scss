@@ -10,3 +10,7 @@ body {
   background-color: var(--primary);
   counter-reset: section 0;
 }
+
+.section-container {
+  min-height: calc(100vh - 4rem);
+}
