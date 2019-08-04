@@ -9,6 +9,7 @@ module.exports = function override(config, env) {
     '@atoms': path.resolve(__dirname, `${paths.appSrc}/components/atoms/`),
     '@sections': path.resolve(__dirname, `${paths.appSrc}/components/sections/`),
     '@assets': path.resolve(__dirname, `${paths.appSrc}/assets/`),
+    '@constants': path.resolve(__dirname, `${paths.appSrc}/constants/`),
   })(config, env);
   return config;
 };

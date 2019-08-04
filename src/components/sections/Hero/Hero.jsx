@@ -2,40 +2,20 @@ import React from 'react';
 import {
   Container, Row, Col, Button
 } from 'reactstrap';
+import HeroHeading from './HeroHeading';
+import HeroDescription from './HeroDescription';
 import './Hero.scss';
 
 const Hero = () => {
   return (
     <Container className="container-hero bg-primary d-flex flex-column justify-content-center">
-      <Row>
-        <Col className="col-xl-10 p-0">
-          <h5 className="text-monospace text-accent">
-          Hi, my name is
-          </h5>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="col-xl-10 p-0">
-          <h1 className="hero-heading">Vitaliy Tkachuk</h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="col-xl-10 p-0">
-          <span className="hero-heading text-light">I build things for the web.</span>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="col-12 col-xl-10 p-0">
-          <Row>
-            <Col className="col-6 my-3">
-              <p>I'm a web developer based in Lviv (Ukraine) specializing in producing high-quality responsive websites with exceptional user experience and SEO friendly code.</p>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+        <HeroHeading className="text-monospace text-accent" text="Hi, my name is" minimal />
+        <HeroHeading text="Vitaliy Tkachuk" />
+        <HeroHeading className="text-light" text="I build things for the web." secondary />
+        <HeroDescription text="I'm a web developer based in Lviv (Ukraine) specializing in producing high-quality responsive websites with exceptional user experience and SEO friendly code." />
       <Row>
         <Col className="col-xl-10  p-0">
-          <Button color="outline-accent text-uppercase" size="sm">
+          <Button color="outline-accent" className="text-uppercase" size="sm">
             Get in touch
           </Button>
         </Col>
