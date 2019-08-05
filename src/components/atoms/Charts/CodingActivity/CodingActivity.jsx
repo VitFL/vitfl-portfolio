@@ -1,5 +1,7 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
+import * as statsConsts from '@constants/stats';
+import useWakaTimeJSON from '@hooks/wakatime/useWakaTimeJSON';
 
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -15,8 +17,10 @@ const data = {
     },
   ],
 };
-const StatsContainer = ({ width, height, options }) => (
-  <Bar data={data} width={width} height={height} options={options} />
-);
+const StatsContainer = ({ width, height, options }) => {
+  const wakaTimeJSON = useWakaTimeJSON(statsConsts.CODING_ACTIVITY_30DAYS);
+  console.log(wakaTimeJSON);
+  return <Bar data={data} width={width} height={height} options={options} />;
+};
 
 export default StatsContainer;

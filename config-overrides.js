@@ -10,6 +10,7 @@ module.exports = function override(config, env) {
     '@sections': path.resolve(__dirname, `${paths.appSrc}/components/sections/`),
     '@assets': path.resolve(__dirname, `${paths.appSrc}/assets/`),
     '@constants': path.resolve(__dirname, `${paths.appSrc}/constants/`),
+    '@hooks': path.resolve(__dirname, `${paths.appSrc}/hooks/`),
   })(config, env);
   return config;
 };
