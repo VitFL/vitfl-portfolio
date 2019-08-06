@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import CodingActivity from '@atoms/Charts/CodingActivity/CodingActivity';
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import CodingActivity from "@atoms/Charts/CodingActivity/CodingActivity";
 
 const StatsContainer = () => (
   <Container className="mt-3">
