@@ -1,17 +1,17 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 import * as wakatime from "@constants/wakatime";
 import useWakaTimeJSON from "@hooks/wakatime/useWakaTimeJSON";
-import useBarChartDataGenerator from "@hooks/wakatime/useBarChartDataGenerator";
+import usePieChartDataGenerator from "@hooks/wakatime/usePieChartDataGenerator";
 
 const StatsContainer = ({ width, height, options }) => {
-  const wakaTimeJSON = useWakaTimeJSON(wakatime.CODING_ACTIVITY_7DAYS);
-  const { chartData, chartOptions } = useBarChartDataGenerator(
+  const wakaTimeJSON = useWakaTimeJSON(wakatime.LANGUAGES_7DAYS);
+  const { chartData, chartOptions } = usePieChartDataGenerator(
     wakaTimeJSON,
     options
   );
   return (
-    <Bar
+    <Pie
       data={chartData || {}}
       width={width}
       height={height}

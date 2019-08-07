@@ -21,12 +21,12 @@ const initialData = {
   labels: [],
   datasets: [
     {
-      label: "",
-      backgroundColor: "rgba(255,99,132,0.2)",
-      borderColor: "rgba(255,99,132,1)",
+      label: "Time spent coding",
+      backgroundColor: "#51d3f2",
+      borderColor: "#20b4d6",
       borderWidth: 1,
-      hoverBackgroundColor: "rgba(255,99,132,0.4)",
-      hoverBorderColor: "rgba(255,99,132,1)",
+      hoverBackgroundColor: "#20b4d6",
+      hoverBorderColor: "#20b4d6",
       data: []
     }
   ]
@@ -34,7 +34,7 @@ const initialData = {
 
 const initialOptions = {};
 
-const useChartDataGenerator = (wakatimeJSON, options = null) => {
+const useBarChartDataGenerator = (wakatimeJSON, options = null) => {
   const [chartData, setChartData] = useState(false);
   const [chartOptions, setChartOptions] = useState(false);
   useEffect(() => {
@@ -91,4 +91,4 @@ const useChartDataGenerator = (wakatimeJSON, options = null) => {
   return { chartData, chartOptions };
 };
 
-export default useChartDataGenerator;
+export default useBarChartDataGenerator;
