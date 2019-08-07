@@ -5,7 +5,7 @@ import useWakaTimeJSON from "@hooks/wakatime/useWakaTimeJSON";
 import useBarChartDataGenerator from "@hooks/wakatime/useBarChartDataGenerator";
 
 const StatsContainer = ({ width, height, options }) => {
-  const wakaTimeJSON = useWakaTimeJSON(wakatime.CODING_ACTIVITY_7DAYS);
+  const wakaTimeJSON = useWakaTimeJSON(wakatime.CODING_ACTIVITY_30DAYS);
   const { chartData, chartOptions } = useBarChartDataGenerator(
     wakaTimeJSON,
     options

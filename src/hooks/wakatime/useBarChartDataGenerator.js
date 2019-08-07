@@ -21,7 +21,6 @@ const initialData = {
   labels: [],
   datasets: [
     {
-      label: "Time spent coding",
       backgroundColor: "#51d3f2",
       borderColor: "#20b4d6",
       borderWidth: 1,

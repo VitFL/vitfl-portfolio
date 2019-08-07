@@ -5,7 +5,6 @@ const initialData = {
   labels: [],
   datasets: [
     {
-      label: "Languages",
       data: [],
       backgroundColor: [
         "#4dc9f6",
