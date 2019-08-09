@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
-import { Button } from 'reactstrap';
-import PortfolioItemDetails from './PortfolioItemDetails';
-import './PortfolioContainer.scss';
-import photobookimg from '../../../assets/img/portfolio/photobook.png';
+import React, { useState } from "react";
+import { Button } from "reactstrap";
+import PortfolioItemDetails from "./PortfolioItemDetails";
+import "./PortfolioContainer.scss";
+import photobookimg from "@assets/img/portfolio/photobook.png";
 
 const PortfolioItem = () => {
-  const [isDetailsOpen, setDetailsOpen] = useState(true);
+  const [isDetailsOpen, setDetailsOpen] = useState(false);
   const toggleDetails = () => setDetailsOpen(!isDetailsOpen);
   return (
     <div className="portfolio-card">
       <img className="portfolio-image" src={photobookimg} alt="" />
       <h5 className="portfolio-heading">Landing Page</h5>
       <p className="portfolio-description">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, pariatur!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit,
+        pariatur!
       </p>
       <Button
         className="portfolio-button"
@@ -22,7 +23,10 @@ const PortfolioItem = () => {
       >
         More info
       </Button>
-      <PortfolioItemDetails isDetailsOpen={isDetailsOpen} toggleDetails={toggleDetails} />
+      <PortfolioItemDetails
+        isDetailsOpen={isDetailsOpen}
+        toggleDetails={toggleDetails}
+      />
     </div>
   );
 };
