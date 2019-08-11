@@ -1,12 +1,8 @@
-import React from "react";
-import { Modal, ModalHeader, ModalBody } from "reactstrap";
+import React from 'react';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 const MyModal = ({
-  isModalOpen,
-  toggleModal,
-  modalHeader,
-  modalBody,
-  ModalFooter
+  isModalOpen, toggleModal, modalHeader, modalBody, ModalFooter,
 }) => (
   <Modal isOpen={isModalOpen} toggle={toggleModal}>
     <ModalHeader toggle={toggleModal}>{modalHeader}</ModalHeader>

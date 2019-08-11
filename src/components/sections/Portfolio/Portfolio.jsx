@@ -1,20 +1,19 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 import SectionHeader from '@atoms/SectionHeader/SectionHeader';
-import PortfolioContainer from '@atoms/Portfolio/PortfolioContainer';
+import useGithubRepos from '@hooks/github/useGithubRepos';
+import PortfolioContainer from './PortfolioContainer';
 
-const items = [
-  { title: 'Title 1', description: 'Description 1' },
-  { title: 'Title 2', description: 'Description 2' },
-  { title: 'Title 3', description: 'Description 3' },
-];
-const Portfolio = () => (
-  <>
-    <Container className="section-container bg-primary">
-      <SectionHeader title="My recent works" />
-      <PortfolioContainer items={items} />
-    </Container>
-  </>
-);
+const Portfolio = () => {
+  const reposList = useGithubRepos('VitFL', 'portfolio');
+  return (
+    <>
+      <Container className="section-container bg-primary">
+        <SectionHeader title="My recent works" />
+        <PortfolioContainer reposList={reposList} />
+      </Container>
+    </>
+  );
+};
 
 export default Portfolio;

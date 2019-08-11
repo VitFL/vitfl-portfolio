@@ -1,12 +1,12 @@
-import React from "react";
-import { Container, Row, Col } from "reactstrap";
-import CodingActivity from "@atoms/Charts/CodingActivity/CodingActivity";
-import LanguagesUsed from "@atoms/Charts/LanguagesUsed/LanguagesUsed";
+import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
+import CodingActivity from '@atoms/Charts/CodingActivity/CodingActivity';
+import LanguagesUsed from '@atoms/Charts/LanguagesUsed/LanguagesUsed';
 
 const StatsContainer = () => (
   <Container className="mt-3">
     <Row>
-      <Col className="col-5 col-offset-4">
+      <Col className="col-6">
         <CodingActivity
           width={400}
           height={300}
@@ -14,23 +14,23 @@ const StatsContainer = () => (
             maintainAspectRatio: false,
             title: {
               display: true,
-              text: "Time spent coding"
+              text: 'Time spent coding',
             },
-            legend: { display: false }
+            legend: { display: false },
           }}
         />
       </Col>
-      <Col className="col-3">
+      <Col className="col-5 offset-1">
         <LanguagesUsed
-          width={200}
-          height={100}
+          width={300}
+          height={200}
           options={{
             maintainAspectRatio: false,
             title: {
               display: true,
-              text: "Languages used in last 30 days"
+              text: 'Languages used in last 30 days',
             },
-            legend: { position: "right", labels: { boxWidth: 12 } }
+            legend: { position: 'right', labels: { boxWidth: 12 } },
           }}
         />
       </Col>
