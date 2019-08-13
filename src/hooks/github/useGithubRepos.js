@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-// import ApolloClient from 'apollo-boost';
-// import { gql } from 'apollo-boost';
 import axios from 'axios';
 import * as GITHUB from '@constants/github';
 

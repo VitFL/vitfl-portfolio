@@ -1,19 +1,25 @@
 import React from 'react';
 import MyModal from '@atoms/Modal/Modal';
+import ReactMarkdown from 'react-markdown';
+import PortfolioItemDetailsFooter from './PortfolioItemDetailsFooter';
 
 const PortfolioItemDetails = ({
   isDetailsOpen, toggleDetails, repo, repoContents,
 }) => {
-  const { title: detailsTitle } = repo;
-  const { description: detailsBody } = repoContents;
-  const detailsFooter = '<h1>Footer</h1>';
+  const { name: repoTitle } = repo;
+  const detailsFooter = <PortfolioItemDetailsFooter repo={repo} toggleModal={toggleDetails} />;
+  const modalBody = repoContents ? (
+    <ReactMarkdown source={repoContents} escapeHtml={false} />
+  ) : (
+    'Loading'
+  );
   return (
     <MyModal
       isModalOpen={isDetailsOpen}
       toggleModal={toggleDetails}
-      modalHeader={detailsTitle}
-      modalBody={detailsBody}
-      ModalFooter={detailsFooter}
+      modalHeader={repoTitle}
+      modalBody={modalBody}
+      modalFooter={detailsFooter}
     />
   );
 };

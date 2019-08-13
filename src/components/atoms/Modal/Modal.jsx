@@ -1,14 +1,21 @@
 import React from 'react';
-import { Modal, ModalHeader, ModalBody } from 'reactstrap';
+import {
+  Modal, ModalHeader, ModalBody, ModalFooter,
+} from 'reactstrap';
+import styled from 'styled-components';
+
+const StyledModal = styled(Modal)`
+  color: var(--primary);
+`;
 
 const MyModal = ({
-  isModalOpen, toggleModal, modalHeader, modalBody, ModalFooter,
+  isModalOpen, toggleModal, modalHeader, modalBody, modalFooter,
 }) => (
-  <Modal isOpen={isModalOpen} toggle={toggleModal}>
+  <StyledModal isOpen={isModalOpen} toggle={toggleModal}>
     <ModalHeader toggle={toggleModal}>{modalHeader}</ModalHeader>
     <ModalBody>{modalBody}</ModalBody>
-    <ModalFooter>{ModalFooter}</ModalFooter>
-  </Modal>
+    <ModalFooter>{modalFooter}</ModalFooter>
+  </StyledModal>
 );
 
 export default MyModal;
