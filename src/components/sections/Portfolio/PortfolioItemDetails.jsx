@@ -20,6 +20,7 @@ const PortfolioItemDetails = ({
       modalHeader={repoTitle}
       modalBody={modalBody}
       modalFooter={detailsFooter}
+      options={{ size: 'lg' }}
     />
   );
 };
