@@ -34,7 +34,7 @@ const NavBar = () => {
             </NavItem>
             <NavItem className="ml-3 my-auto main-nav-item">
               <NavLink href="#contact" className="d-inline">
-                Contact
+                My activity stats
               </NavLink>
             </NavItem>
             <NavItem className="my-auto ml-4">
