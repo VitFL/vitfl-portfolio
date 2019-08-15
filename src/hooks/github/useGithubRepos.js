@@ -4,6 +4,7 @@ import * as GITHUB from '@constants/github';
 
 const reposInfo = (responseJSON) => {
   const reposInfoArray = responseJSON.data.items.map(item => ({
+    full_name: item.full_name,
     name: item.name,
     description: item.description,
     html_url: item.html_url,
