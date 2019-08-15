@@ -27,10 +27,11 @@ const usePieChartDataGenerator = (wakatimeJSON, options = null) => {
   const [chartOptions, setChartOptions] = useState(false);
   useEffect(() => {
     const nextData = { ...initialData };
-    Object.keys(wakatimeJSON).forEach((index) => {
-      nextData.labels = [...nextData.labels, wakatimeJSON[index].name];
-      nextData.datasets[0].data = [...nextData.datasets[0].data, wakatimeJSON[index].percent];
-    });
+    wakatimeJSON
+      && Object.keys(wakatimeJSON).forEach((index) => {
+        nextData.labels = [...nextData.labels, wakatimeJSON[index].name];
+        nextData.datasets[0].data = [...nextData.datasets[0].data, wakatimeJSON[index].percent];
+      });
 
     const nextOptions = options || { ...initialOptions };
     nextOptions.tooltips = {
