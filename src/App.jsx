@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from '@atoms/NavBar/NavBar';
+import ScrollToTop from '@atoms/ScrollToTop/ScrollToTop';
 import Hero from '@sections/Hero/Hero';
 import AboutMe from '@sections/AboutMe/AboutMe';
 import Portfolio from '@sections/Portfolio/Portfolio';
@@ -16,8 +17,9 @@ const App = () => {
       <Portfolio />
       <Stats />
       <Footer />
+      <ScrollToTop />
     </>
   );
-}
+};
 
 export default App;
