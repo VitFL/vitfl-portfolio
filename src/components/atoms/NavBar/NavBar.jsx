@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Button,
+  Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
 } from 'reactstrap';
+import * as links from '@constants/links';
 import './NavBar.scss';
 
 const NavBar = () => {
@@ -38,9 +32,14 @@ const NavBar = () => {
               </NavLink>
             </NavItem>
             <NavItem className="my-auto ml-4">
-              <Button color="outline-accent" size="sm">
-                Resume
-              </Button>
+              <a
+                href={links.cv}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline-accent"
+              >
+                RESUME
+              </a>
             </NavItem>
           </Nav>
         </Collapse>
