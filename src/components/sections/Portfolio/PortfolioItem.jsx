@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
+import * as githubUtils from '@utils/github';
 import PortfolioItemDetails from './PortfolioItemDetails';
 import './PortfolioContainer.scss';
 
@@ -14,7 +15,7 @@ const PortfolioItem = ({ repo, repoContents }) => {
         src={`https://raw.githubusercontent.com/${full_name}/master/screenshot-small.png`}
         alt=""
       />
-      <h5 className="portfolio-heading">{name}</h5>
+      <h5 className="portfolio-heading">{githubUtils.nameBeautify(name)}</h5>
       <p className="portfolio-description">{description}</p>
       <Button
         className="portfolio-button"
