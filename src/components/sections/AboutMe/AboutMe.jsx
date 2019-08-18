@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import SectionHeader from '@atoms/SectionHeader/SectionHeader';
+import { Row, Col } from 'reactstrap';
+import Section from '@atoms/Section/Section';
+import SectionHeader from '@atoms/Section/SectionHeader';
 import List from '@atoms/List/List';
 import photo from '@assets/img/profile-photo.jpg';
 import './AboutMe.scss';
@@ -15,7 +16,7 @@ const listItems = [
 
 const AboutMe = () => {
   return (
-    <Container className="section-container bg-primary">
+    <Section id="about">
       <SectionHeader title="About Me" />
       <Row>
         <Col className="col-xl-5 p-0">
@@ -33,7 +34,7 @@ const AboutMe = () => {
           <img src={photo} className="profile-photo" alt="portrait" />
         </Col>
       </Row>
-    </Container>
+    </Section>
   );
 };
 

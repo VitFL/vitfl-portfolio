@@ -27,7 +27,7 @@ const NavBar = () => {
               </NavLink>
             </NavItem>
             <NavItem className="ml-3 my-auto main-nav-item">
-              <NavLink href="#contact" className="d-inline">
+              <NavLink href="#stats" className="d-inline">
                 My activity stats
               </NavLink>
             </NavItem>
@@ -36,7 +36,7 @@ const NavBar = () => {
                 href={links.cv}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline-accent"
+                className="btn btn-outline-accent btn-sm"
               >
                 RESUME
               </a>

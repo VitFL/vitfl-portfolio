@@ -1,15 +1,13 @@
 import React from 'react';
-import { Container } from 'reactstrap';
-import SectionHeader from '@atoms/SectionHeader/SectionHeader';
+import Section from '@atoms/Section/Section';
+import SectionHeader from '@atoms/Section/SectionHeader';
 import StatsContainer from '@sections/Stats/StatsContainer';
 
 const Stats = () => (
-  <>
-    <Container className="section-container bg-primary">
-      <SectionHeader title="My activity stats" />
-      <StatsContainer />
-    </Container>
-  </>
+  <Section id="stats">
+    <SectionHeader title="My activity stats" />
+    <StatsContainer />
+  </Section>
 );
 
 export default Stats;

@@ -2,12 +2,16 @@ import React from 'react';
 import {
   Container, Row, Col, Button
 } from 'reactstrap';
+import styled from 'styled-components';
 import HeroHeading from './HeroHeading';
 import HeroDescription from './HeroDescription';
 
+const StyledContainer = styled(Container)`
+min-height: calc(100vh - 4rem);
+`;
 const Hero = () => {
   return (
-    <Container className="section-container bg-primary d-flex flex-column justify-content-center">
+    <StyledContainer className="bg-primary d-flex flex-column justify-content-center">
         <HeroHeading className="text-monospace text-accent" text="Hi, my name is" minimal />
         <HeroHeading text="Vitaliy Tkachuk" />
         <HeroHeading className="text-light" text="I build things for the web." secondary />
@@ -19,7 +23,7 @@ const Hero = () => {
           </Button>
         </Col>
       </Row>
-    </Container>
+    </StyledContainer>
   );
 };
 
