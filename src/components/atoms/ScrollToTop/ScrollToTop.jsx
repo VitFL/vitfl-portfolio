@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import { Icon } from 'react-icons-kit';
-import { arrowUp2 } from 'react-icons-kit/icomoon/arrowUp2';
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import { Icon } from "react-icons-kit";
+import { arrowUp2 } from "react-icons-kit/icomoon/arrowUp2";
 
 const ScrollToTop = () => {
   const Button = styled.div`
@@ -34,17 +34,21 @@ const ScrollToTop = () => {
   const buttonRef = React.createRef();
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
+      if (!buttonRef.current) return;
       if (window.scrollY > document.documentElement.clientHeight / 2) {
-        buttonRef.current.classList.add('active');
+        buttonRef.current.classList.add("active");
       } else {
-        buttonRef.current.classList.remove('active');
+        buttonRef.current.classList.remove("active");
       }
     });
-  }, []);
+  }, [buttonRef]);
 
   return (
-    <Button ref={buttonRef} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+    <Button
+      ref={buttonRef}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    >
       <Icon icon={arrowUp2} size={32} />
     </Button>
   );
