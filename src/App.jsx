@@ -15,15 +15,14 @@ const App = () => {
   useEffect(() => {
     const alertBody = (
       <>
-        <h4 className="alert-heading">Well done!</h4>
+        <h4 className="alert-heading">Website Is Under Development</h4>
         <p>
-          Aww yeah, you successfully read this important alert message. This
-          example text is going to run a bit longer so that you can see how
-          spacing within an alert works with this kind of content.
+          I'm still working on this website, so please understand if you come
+          across anything that's broken or incomplete.
         </p>
       </>
     );
-    createAlert({ color: "info", body: alertBody, timeout: 5000 });
+    createAlert({ color: "dark", body: alertBody, timeout: 6000 });
   }, []);
   return (
     <>
