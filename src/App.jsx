@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import config from "@root/config";
 import NavBar from "@atoms/NavBar/NavBar";
 import ScrollToTop from "@atoms/ScrollToTop/ScrollToTop";
 import Hero from "@sections/Hero/Hero";
@@ -13,17 +14,16 @@ import "./App.scss";
 const App = () => {
   const { createAlert } = useAlert();
   useEffect(() => {
+    if (!config || !config.underConstruction) return;
+    const { enable, title, text, color, duration } = config.underConstruction;
     const alertBody = (
       <>
-        <h4 className="alert-heading">Website Is Under Development</h4>
-        <p>
-          I'm still working on this website, so please understand if you come
-          across anything that's broken or incomplete.
-        </p>
+        <h4 className="alert-heading">{title}</h4>
+        <p>{text}</p>
       </>
     );
-    createAlert({ color: "dark", body: alertBody, timeout: 6000 });
-  }, []);
+    enable && createAlert({ color, body: alertBody, timeout: duration });
+  }, [config.underConstruction]);
   return (
     <>
       <NavBar />
