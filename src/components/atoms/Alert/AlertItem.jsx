@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Alert } from 'reactstrap';
+import React, { useState, useEffect } from "react";
+import { Alert } from "reactstrap";
 
-const AlertItem = ({ color, text, timeout }) => {
+const AlertItem = ({ color, body, timeout }) => {
   const [isOpen, setIsOpen] = useState(true);
   const onDismiss = () => {
     setIsOpen(false);
@@ -15,7 +15,7 @@ const AlertItem = ({ color, text, timeout }) => {
 
   return (
     <Alert isOpen={isOpen} color={color} toggle={onDismiss}>
-      {text}
+      {body}
     </Alert>
   );
 };
