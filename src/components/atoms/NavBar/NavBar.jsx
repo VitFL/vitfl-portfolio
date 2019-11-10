@@ -31,6 +31,11 @@ const NavBar = () => {
                 My activity stats
               </NavLink>
             </NavItem>
+            <NavItem className="ml-3 my-auto main-nav-item">
+              <NavLink href="#contact" className="d-inline">
+                Contact
+              </NavLink>
+            </NavItem>
             <NavItem className="my-auto ml-4">
               <a
                 href={links.cv}
