@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
 const InputContainer = styled.div``;
 
@@ -20,16 +20,19 @@ const StyledInput = styled.input`
   &:focus {
     border-bottom: 2px solid #01a093;
   }
+  &.invalid {
+    border-bottom: 2px solid var(--danger);
+  }
 `;
 
 const Input = ({ name, placeholder, reset }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   useEffect(() => {
-    reset && setValue("");
+    reset && setValue('');
   }, [reset]);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const val = e.target.value;
     setValue(val);
   };
@@ -40,7 +43,7 @@ const Input = ({ name, placeholder, reset }) => {
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
-        autocomplete={"false"}
+        autocomplete="false"
       />
     </InputContainer>
   );

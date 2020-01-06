@@ -8,7 +8,7 @@ import Hero from "@sections/Hero/Hero";
 import AboutMe from "@sections/AboutMe/AboutMe";
 import Portfolio from "@sections/Portfolio/Portfolio";
 import Stats from "@sections/Stats/Stats";
-import ContactMe from '@sections/ContactMe/ContactMe';
+import ContactMe from "@sections/ContactMe/ContactMe";
 import Footer from "@sections/Footer/Footer";
 import "./App.scss";
 

@@ -5,6 +5,7 @@ import { Button } from "reactstrap";
 
 const ContactMeForm = () => {
   const [status, setStatus] = useState();
+  const [isFormValid, setIsFormValid] = useState();
 
   const submitForm = ev => {
     ev.preventDefault();
