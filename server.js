@@ -1,18 +1,34 @@
+require("dotenv").config();
 const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
 
-const testRoute = require("./routes/test");
-
-const app = express();
+const mainContentRoute = require("./routes/maincontent");
 
 const apiBasePATH = "/api";
 
-app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
 
-app.use(`${apiBasePATH}/test`, testRoute);
+const db = require("./config/db").mongoURI;
 
-// static in production
+mongoose
+  .connect(db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+  })
+  .then(() => console.log("Mongo connected"))
+  .catch(err => console.log(err));
+
+app.use(`${apiBasePATH}/maincontent`, mainContentRoute);
+
+// serve react client on production enviroment
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
