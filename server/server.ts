@@ -1,13 +1,16 @@
-require("dotenv").config();
-const express = require("express");
-const app = express();
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const path = require("path");
+import * as path from "path";
+import { resolve } from "path";
+import { config } from "dotenv";
+import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
 
-const mainContentRoute = require("./routes/maincontent");
+config({ path: resolve(__dirname, "../.env") });
 
 const apiBasePATH = "/api";
+const mainContentRoute = require("./routings/maincontent");
+
+const app = express();
 
 app.use(
   bodyParser.urlencoded({
