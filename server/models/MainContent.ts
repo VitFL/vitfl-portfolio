@@ -13,4 +13,4 @@ const MainContentSchema = new Schema({
   }
 });
 
-module.exports = Dashboard = mongoose.model("MainContent", MainContentSchema);
+module.exports = mongoose.model("MainContent", MainContentSchema);

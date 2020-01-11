@@ -18,10 +18,12 @@ app.use(
   })
 );
 
-const db = require("./config/db").mongoURI;
+const {
+  env: { MONGODB_URI }
+} = process;
 
 mongoose
-  .connect(db, {
+  .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
