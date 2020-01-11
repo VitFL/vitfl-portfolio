@@ -1,7 +1,7 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
-const MainContent = require("../models/MainContent");
+import MainContent from "../models/MainContent";
 
 // @route GET /
 // @desc Gets main content field value
@@ -51,4 +51,4 @@ router.delete("/:id", (req, res) => {
     .catch(err => res.status(404).json({ success: false }));
 });
 
-module.exports = router;
+export default router;

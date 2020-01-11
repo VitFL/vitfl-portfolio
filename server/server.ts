@@ -4,11 +4,10 @@ import { config } from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-
-config({ path: resolve(__dirname, "../.env") });
+import mainContentRouter from "./routings/maincontent";
 
 const apiBasePATH = "/api";
-const mainContentRoute = require("./routings/maincontent");
+config({ path: resolve(__dirname, "../.env") });
 
 const app = express();
 
@@ -31,7 +30,7 @@ mongoose
   .then(() => console.log("Mongo connected"))
   .catch(err => console.log(err));
 
-app.use(`${apiBasePATH}/maincontent`, mainContentRoute);
+app.use(`${apiBasePATH}/maincontent`, mainContentRouter);
 
 // serve react client on production enviroment
 if (process.env.NODE_ENV === "production") {
