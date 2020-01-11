@@ -5,11 +5,11 @@
   "main": "server.js",
   "scripts": {
     "build-ts": "tsc",
-    "start": "npm run build-ts && node dist/server.js",
+    "start": "node dist/server.js",
     "client": "npm start --prefix client",
     "server": "npm run build-ts && nodemon dist/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build-ts && npm install --prefix client && npm run build --prefix client"
   },
   "author": "Vitaliy Tkachuk (VitFL)",
   "license": "ISC",
