@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { useAlert } from "@atoms/Alert/AlertProvider";
-import AlertItem from "@atoms/Alert/AlertItem";
+import { useAlert } from "./AlertProvider";
+import AlertItem from "./AlertItem";
 
 const Container = styled.div`
   position: fixed;

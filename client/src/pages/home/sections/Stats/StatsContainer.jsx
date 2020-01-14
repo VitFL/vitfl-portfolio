@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import CodingActivity from '@atoms/Charts/CodingActivity/CodingActivity';
-import LanguagesUsed from '@atoms/Charts/LanguagesUsed/LanguagesUsed';
+import CodingActivity from '@components/Charts/CodingActivity/CodingActivity';
+import LanguagesUsed from '@components/Charts/LanguagesUsed/LanguagesUsed';
 
 const StatsContainer = () => (
   <Container className="mt-3">

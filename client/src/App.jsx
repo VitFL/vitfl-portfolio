@@ -1,15 +1,12 @@
 import React, { useEffect } from "react";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import config from "@root/config";
-import { useAlert } from "@atoms/Alert/AlertProvider";
-import AlertContainer from "@atoms/Alert/AlertContainer";
-import NavBar from "@atoms/NavBar/NavBar";
-import ScrollToTop from "@atoms/ScrollToTop/ScrollToTop";
-import Hero from "@sections/Hero/Hero";
-import AboutMe from "@sections/AboutMe/AboutMe";
-import Portfolio from "@sections/Portfolio/Portfolio";
-import Stats from "@sections/Stats/Stats";
-import ContactMe from "@sections/ContactMe/ContactMe";
-import Footer from "@sections/Footer/Footer";
+import { useAlert } from "@components/Alert/AlertProvider";
+import AlertContainer from "@components/Alert/AlertContainer";
+
+import Home from './pages/home';
+import Register from './pages/register';
 import "./App.scss";
 
 const App = () => {
@@ -26,17 +23,13 @@ const App = () => {
     enable && createAlert({ color, body: alertBody, timeout: duration });
   }, [config.underConstruction]);
   return (
-    <>
-      <NavBar />
-      <Hero />
-      <AboutMe />
-      <Portfolio />
-      <Stats />
-      <ContactMe />
-      <Footer />
-      <ScrollToTop />
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/register" component={Register} />
+      </Switch>
       <AlertContainer />
-    </>
+    </BrowserRouter>
   );
 };
 

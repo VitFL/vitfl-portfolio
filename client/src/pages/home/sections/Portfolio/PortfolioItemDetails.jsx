@@ -1,5 +1,5 @@
 import React from 'react';
-import MyModal from '@atoms/Modal/Modal';
+import MyModal from '@components/Modal/Modal';
 import ReactMarkdown from 'react-markdown';
 import PortfolioItemDetailsFooter from './PortfolioItemDetailsFooter';
 
@@ -11,8 +11,8 @@ const PortfolioItemDetails = ({
   const modalBody = repoContents ? (
     <ReactMarkdown source={repoContents} escapeHtml={false} />
   ) : (
-    'Loading'
-  );
+      'Loading'
+    );
   return (
     <MyModal
       isModalOpen={isDetailsOpen}

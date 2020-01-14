@@ -1,6 +1,6 @@
 import React from "react";
-import Section from "@atoms/Section/Section";
-import SectionHeader from "@atoms/Section/SectionHeader";
+import Section from "@components/Section/Section";
+import SectionHeader from "@components/Section/SectionHeader";
 import ContactMeSocials from "./ContactMeSocials";
 import ContactMeForm from "./ContactMeForm";
 

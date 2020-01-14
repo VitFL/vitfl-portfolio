@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SocialButton from "@atoms/Buttons/SocialButton";
+import SocialButton from "@components/Buttons/SocialButton";
 
 const SocialButtonsContainer = styled.div`
   margin: 10px 0;

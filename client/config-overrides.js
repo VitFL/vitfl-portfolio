@@ -7,7 +7,6 @@ module.exports = function override(config, env) {
   config = rewireAliases.aliasesOptions({
     "@root": path.resolve(__dirname, `${paths.appSrc}/`),
     "@components": path.resolve(__dirname, `${paths.appSrc}/components/`),
-    "@atoms": path.resolve(__dirname, `${paths.appSrc}/components/atoms/`),
     "@sections": path.resolve(
       __dirname,
       `${paths.appSrc}/components/sections/`

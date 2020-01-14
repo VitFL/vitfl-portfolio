@@ -1,8 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-import Section from '@atoms/Section/Section';
-import SectionHeader from '@atoms/Section/SectionHeader';
-import List from '@atoms/List/List';
+import Section from '@components/Section/Section';
+import SectionHeader from '@components/Section/SectionHeader';
+import List from '@components/List/List';
 import photo from '@assets/img/profile-photo.jpg';
 import './AboutMe.scss';
 

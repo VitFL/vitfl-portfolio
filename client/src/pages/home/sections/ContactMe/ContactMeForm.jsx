@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Input from "@atoms/Form/Input";
-import TextArea from "@atoms/Form/TextArea";
+import Input from "@components/Form/Input";
+import TextArea from "@components/Form/TextArea";
 import { Button } from "reactstrap";
 
 const ContactMeForm = () => {

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import App from "./App";
-import { AlertProvider } from "@atoms/Alert/AlertProvider";
+import { AlertProvider } from "@components/Alert/AlertProvider";
 
 require("dotenv").config();
 
