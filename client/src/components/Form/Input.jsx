@@ -25,7 +25,7 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = ({ name, placeholder, reset }) => {
+const Input = ({ name, placeholder, type = 'text', onChange, reset }) => {
   const [value, setValue] = useState('');
 
   useEffect(() => {
@@ -35,11 +35,13 @@ const Input = ({ name, placeholder, reset }) => {
   const handleChange = (e) => {
     const val = e.target.value;
     setValue(val);
+    onChange(e);
   };
   return (
     <InputContainer>
       <StyledInput
         name={name}
+        type={type}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
