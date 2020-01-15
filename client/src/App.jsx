@@ -6,6 +6,7 @@ import { useAlert } from "@components/Alert/AlertProvider";
 import AlertContainer from "@components/Alert/AlertContainer";
 
 import Home from './pages/home';
+import Login from './pages/login';
 import Register from './pages/register';
 import "./App.scss";
 
@@ -26,6 +27,7 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Home} exact />
+        <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
       </Switch>
       <AlertContainer />
