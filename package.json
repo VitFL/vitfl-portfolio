@@ -4,12 +4,11 @@
   "description": "vitfl.dev portfolio website",
   "main": "server.js",
   "scripts": {
-    "build-ts": "tsc",
     "start": "node dist/server.js",
     "client": "npm start --prefix client",
-    "server": "npm run build-ts && nodemon dist/server.js",
+    "server": "nodemon dist/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build-ts && npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Vitaliy Tkachuk (VitFL)",
   "license": "ISC",
@@ -23,12 +22,10 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.7",
     "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0"
+    "passport-jwt": "^4.0.0",
+    "validator": "^12.1.0"
   },
   "devDependencies": {
-    "@types/dotenv": "^6.1.0",
-    "@types/node": "^13.1.6",
-    "nodemon": "^2.0.2",
-    "typescript": "^3.2.2"
+    "nodemon": "^2.0.2"
   }
 }
