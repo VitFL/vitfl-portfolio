@@ -4,9 +4,8 @@
   "description": "vitfl.dev portfolio website",
   "main": "server.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "nodemon --exec babel-node server/server.js",
     "client": "npm start --prefix client",
-    "server": "nodemon dist/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
@@ -16,16 +15,15 @@
     "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.2",
-    "cookie-parser": "^1.4.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.8.7",
-    "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0",
-    "validator": "^12.1.0"
+    "mongoose": "^5.8.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
     "nodemon": "^2.0.2"
   }
 }
