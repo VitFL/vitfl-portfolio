@@ -1,23 +1,23 @@
-import express from "express";
+import express from 'express';
 const router = express.Router();
 
-import MainContent from "../models/MainContent";
+import MainContent from '../models/MainContent';
 
-// @route GET /
+// @route GET api/maincontent
 // @desc Gets main content field value
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   MainContent.find({}).then(fields => res.json(fields));
 });
 
-// @route GET /
+// @route GET api/maincontent/:key
 // @desc Gets main content field value by its key
-router.get("/:key", (req, res) => {
+router.get('/:key', (req, res) => {
   MainContent.find({ key: req.params.key }).then(field => res.json(field));
 });
 
-// @route POST /
+// @route POST api/maincontent
 // @desc Creates new main content field
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   const { key, value } = req.body;
   const newField = new MainContent({
     key,
@@ -27,9 +27,9 @@ router.post("/", (req, res) => {
   newField.save().then(field => res.json(field));
 });
 
-// @route PUT /:id
+// @route PUT api/maincontent/:id
 // @desc Update an existing main content field by its id
-router.put("/:id", (req, res) => {
+router.put('/:id', (req, res) => {
   const {
     body: { key, value }
   } = req;
@@ -42,9 +42,9 @@ router.put("/:id", (req, res) => {
   });
 });
 
-// @route DELETE /
+// @route DELETE api/maincontent/:id
 // @desc Delete a main content field
-router.delete("/:id", (req, res) => {
+router.delete('/:id', (req, res) => {
   const { id } = req.params;
   MainContent.findById(id)
     .then(field => field.remove().then(() => res.json({ success: true })))
