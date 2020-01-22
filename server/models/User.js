@@ -1,15 +1,17 @@
 import mongoose, { Schema } from 'mongoose';
-
+import { nameValidator, emailValidator, passwordValidator } from '../validation/user';
 const UserSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    validate: nameValidator
   },
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    validate: emailValidator
   },
   password: {
     type: String,
@@ -17,7 +19,8 @@ const UserSchema = new Schema({
   },
   role: {
     type: String,
-    required: false
+    required: false,
+    validate: nameValidator
   }
 });
 

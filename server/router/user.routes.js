@@ -11,17 +11,25 @@ const {
 // @route  POST api/user/register
 // @desc   Register user
 router.post('/register', async (req, res) => {
-  const { name, email, password, role } = req.body;
+  const { name, email, password, password2, role } = req.body;
   const salt = await bcrypt.genSalt(10);
   const userPass = await bcrypt.hash(password, salt);
-  const newUser = new User({
-    name: name,
-    email: email,
-    password: userPass,
-    role: role
-  });
 
   try {
+    const isNameTaken = await User.findOne({ name });
+    const isEmailTaken = await User.findOne({ email });
+
+    if (isNameTaken) throw new Error('User with this name already exists!');
+    if (isEmailTaken) throw new Error('User with this email already exists!');
+    if (password !== password2) throw new Error('Passwords are inconsistent!');
+
+    const newUser = new User({
+      name: name,
+      email: email,
+      password: userPass,
+      role: role
+    });
+
     const result = await newUser.save();
     res.status(200).send(result);
   } catch (err) {
@@ -58,6 +66,7 @@ router.post('/login', (req, res) => {
           token: token,
           userData: userData
         };
+
         return res.status(200).json(body);
       } else {
         return res.status(400).json({ passwordincorrect: 'Password incorrect' });
@@ -79,10 +88,12 @@ router.post('/profile', (req, res) => {
         email: user.email,
         phone: user.phone
       };
+
       const body = {
         token: token,
         userData: userData
       };
+
       return res.json(body);
     } else {
       return res.status(400).send({ wrongtoken: 'Wrong token provided' });
