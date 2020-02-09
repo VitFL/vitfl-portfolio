@@ -6,7 +6,7 @@ import LanguagesUsed from '@components/Charts/LanguagesUsed/LanguagesUsed';
 const StatsContainer = () => (
   <Container className="mt-3">
     <Row>
-      <Col className="col-6">
+      <Col className="col-10 col-xl-6 col-md-10">
         <CodingActivity
           width={400}
           height={300}
@@ -20,7 +20,7 @@ const StatsContainer = () => (
           }}
         />
       </Col>
-      <Col className="col-5 offset-1">
+      <Col className="col-10 col-xl-5 offset-xl-1 col-md-10">
         <LanguagesUsed
           width={400}
           height={300}
