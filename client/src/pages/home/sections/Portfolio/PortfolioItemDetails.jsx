@@ -1,4 +1,5 @@
 import React from 'react';
+import * as githubUtils from '@utils/github';
 import MyModal from '@components/Modal/Modal';
 import ReactMarkdown from 'react-markdown';
 import PortfolioItemDetailsFooter from './PortfolioItemDetailsFooter';
@@ -17,7 +18,7 @@ const PortfolioItemDetails = ({
     <MyModal
       isModalOpen={isDetailsOpen}
       toggleModal={toggleDetails}
-      modalHeader={repoTitle}
+      modalHeader={githubUtils.nameBeautify(repoTitle)}
       modalBody={modalBody}
       modalFooter={detailsFooter}
       options={{ size: 'lg' }}
