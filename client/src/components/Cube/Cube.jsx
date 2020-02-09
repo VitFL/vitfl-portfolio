@@ -11,7 +11,8 @@ const CubeContainer = styled.div`
 width: 150px;
 height: 150px;
 position: relative;
-top: 300px;
+top: 50px;
+margin-bottom: 100px;
 left: 50%;
 margin-left: -75px;
 
