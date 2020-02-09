@@ -8,7 +8,7 @@ const PortfolioContainer = ({ reposList }) => {
     ? reposList.map((repo, index) => {
       const repoContents = useGithubRepoContents(repo, 'README.md');
       return (
-        <Col key={index} className="col-4 mb-4 d-flex align-items-stretch">
+        <Col key={index} className="col-xl-4 col-md-6 col-10 mb-4 d-flex align-items-stretch">
           <PortfolioItem repo={repo} repoContents={repoContents} />
         </Col>
       );
