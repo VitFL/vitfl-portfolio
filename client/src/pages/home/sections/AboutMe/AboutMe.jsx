@@ -24,7 +24,7 @@ const AboutMe = () => (
   <Section id="about">
     <SectionHeader title="About Me" />
     <Row>
-      <Col className="col-xl-6 col-md-10 col-10">
+      <Col className="col-xl-6 col-md-12 col-12">
         <p>
           I am a web developer based in Lviv (Ukraine) who enjoys building responsive websites and
           web-applications, that allow the user to experience website in the best and most
@@ -35,7 +35,7 @@ const AboutMe = () => (
         <p>Clients often approach me when they need a developer who can provide:</p>
         <List items={listItems} />
       </Col>
-      <Col className="col-xl-6 col-md-10 col-10">
+      <Col className="col-xl-6 col-md-12 col-12">
         <Cube front={jsLogo} top={htmlLogo} left={cssLogo} right={bootstrapLogo} bottom={reactLogo} />
       </Col>
     </Row>
