@@ -9,6 +9,10 @@ const StyledButton = styled.a`
   height: 70px;
   position: relative;
   cursor: pointer;
+  @media (max-width: 767px) {
+    width: 50px;
+    height: 50px;
+  }
   &:hover .button-polygon {
     filter: url(#glow);
   }
