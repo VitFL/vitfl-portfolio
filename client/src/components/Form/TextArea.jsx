@@ -21,6 +21,11 @@ const StyledTextArea = styled.textarea`
     border-bottom: 2px solid #01a093;
     height: 245px;
   }
+  @media (max-width: 767px) {
+    height: 30px;
+    font-size: 1rem;
+    line-height: 30px;
+  }
 `;
 const Input = ({ name, placeholder, reset }) => {
   const [value, setValue] = useState("");

@@ -23,6 +23,11 @@ const StyledInput = styled.input`
   &.invalid {
     border-bottom: 2px solid var(--danger);
   }
+  @media (max-width: 767px) {
+    height: 30px;
+    font-size: 1rem;
+    line-height: 35px;
+  }
 `;
 
 const Input = ({ name, placeholder, type = 'text', onChange, reset }) => {

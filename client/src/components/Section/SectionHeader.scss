@@ -6,6 +6,10 @@
   white-space: nowrap;
   font-size: 1.6rem;
   font-weight: 800;
+  @media (max-width: 767px) {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
   &::before {
     counter-increment: section 1;
     content: "0" counter(section) ".";
@@ -14,6 +18,9 @@
     font-size: 1.2rem;
     font-family: $font-family-monospace;
     color: var(--accent);
+    @media (max-width: 767px) {
+      font-size: 1rem;
+    }
   }
   &::after {
     content: "";
