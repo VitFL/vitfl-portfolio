@@ -6,6 +6,11 @@ import { Button } from "reactstrap";
 const ContactMeForm = () => {
   const [status, setStatus] = useState();
   const [isFormValid, setIsFormValid] = useState();
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    text: ''
+  });
 
   const submitForm = ev => {
     ev.preventDefault();
@@ -32,12 +37,13 @@ const ContactMeForm = () => {
       action="https://formspree.io/mgeeodyd"
       method="POST"
     >
-      <Input name="name" placeholder="Name" reset={status === "SUCCESS"} />
-      <Input name="email" placeholder="E-mail" reset={status === "SUCCESS"} />
+      <Input name="name" placeholder="Name" reset={status === "SUCCESS"} onChange={e => setFormData({ ...formData, login: e.target.value })} />
+      <Input name="email" placeholder="E-mail" reset={status === "SUCCESS"} onChange={e => setFormData({ ...formData, login: e.target.value })} />
       <TextArea
         name="text"
         placeholder="Message"
         reset={status === "SUCCESS"}
+        onChange={e => setFormData({ ...formData, login: e.target.value })}
       />
       <Button
         type="submit"
