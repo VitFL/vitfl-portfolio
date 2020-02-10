@@ -3,6 +3,24 @@ import Input from "@components/Form/Input";
 import TextArea from "@components/Form/TextArea";
 import { Button } from "reactstrap";
 
+const submitForm = (form, setStatus) => {
+  const data = new FormData(form);
+  const xhr = new XMLHttpRequest();
+  xhr.open(form.method, form.action);
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    if (xhr.status === 200) {
+      form.reset();
+      setStatus("SUCCESS");
+    } else {
+      setStatus("ERROR");
+    }
+  };
+  xhr.send(data);
+};
+
+
 const ContactMeForm = () => {
   const [status, setStatus] = useState();
   const [isFormValid, setIsFormValid] = useState();
@@ -12,28 +30,15 @@ const ContactMeForm = () => {
     text: ''
   });
 
-  const submitForm = ev => {
+  const onSubmit = ev => {
     ev.preventDefault();
     const form = ev.target;
-    const data = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    xhr.open(form.method, form.action);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== XMLHttpRequest.DONE) return;
-      if (xhr.status === 200) {
-        form.reset();
-        setStatus("SUCCESS");
-      } else {
-        setStatus("ERROR");
-      }
-    };
-    xhr.send(data);
+    submitForm(form, setStatus);
   };
 
   return (
     <form
-      onSubmit={submitForm}
+      onSubmit={onSubmit}
       action="https://formspree.io/mgeeodyd"
       method="POST"
     >
