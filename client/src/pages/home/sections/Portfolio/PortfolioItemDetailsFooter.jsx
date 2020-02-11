@@ -9,6 +9,11 @@ const Container = styled.div`
   & > * {
     margin-right: 18px;
   }
+  @media (max-width: 767px) {
+    span:first-of-type {
+      display: none;
+    }
+  }
 `;
 
 const formatDate = (dateStr) => {
@@ -33,7 +38,7 @@ const PortfolioItemDetailsFooter = ({ repo }) => {
         >
           <Icon icon={github} />
           {' '}
-View Repository
+          View Repository
         </a>
       </Container>
     </>
