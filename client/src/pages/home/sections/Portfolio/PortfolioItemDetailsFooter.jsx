@@ -14,6 +14,12 @@ const Container = styled.div`
       display: none;
     }
   }
+
+  @media (max-width: 578px) {
+    span {
+      font-size: 0.85px;
+    }
+  }
 `;
 
 const formatDate = (dateStr) => {

@@ -12,6 +12,17 @@ const StyledReactMarkdown = styled(ReactMarkdown)`
   h3 {
     font-size: 1.5rem;
   }
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 1.75rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+    }
+    li {
+      font-size: 0.85rem;
+    }
+  }
 `;
 
 const PortfolioItemDetails = ({
