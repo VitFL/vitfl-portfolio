@@ -44,7 +44,7 @@ const Hero = () => {
       <HeroDescription text="I'm a web developer based in Lviv (Ukraine) specializing in producing high-quality responsive websites with exceptional user experience and SEO friendly code." />
       <Row>
         <Col className="col-xl-10">
-          <StyledButton color="outline-accent" className="text-uppercase" size="sm">
+          <StyledButton color="outline-accent" className="text-uppercase" size="sm" href="#contact">
             Get in touch
           </StyledButton>
         </Col>
