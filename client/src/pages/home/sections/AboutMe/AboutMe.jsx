@@ -10,8 +10,6 @@ import htmlLogo from '@assets/img/tech-logos/html5_flipped.png';
 import reactLogo from '@assets/img/tech-logos/react.png';
 import bootstrapLogo from '@assets/img/tech-logos/bootstrap_flipped.png';
 
-import styled from "styled-components";
-
 const listItems = [
   'Responsive HTML/CSS',
   'JavaScript (vanilla, jQuery, React.js and other frameworks)',
@@ -36,7 +34,13 @@ const AboutMe = () => (
         <List items={listItems} />
       </Col>
       <Col className="col-xl-6 col-md-12 col-12">
-        <Cube front={jsLogo} top={htmlLogo} left={cssLogo} right={bootstrapLogo} bottom={reactLogo} />
+        <Cube
+          front={jsLogo}
+          top={htmlLogo}
+          left={cssLogo}
+          right={bootstrapLogo}
+          bottom={reactLogo}
+        />
       </Col>
     </Row>
   </Section>

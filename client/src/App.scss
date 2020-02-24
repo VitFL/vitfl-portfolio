@@ -16,3 +16,9 @@ p {
     font-size: 0.9rem;
   }
 }
+
+#about {
+  @media (max-width: 576px) {
+    display: none;
+  }
+}

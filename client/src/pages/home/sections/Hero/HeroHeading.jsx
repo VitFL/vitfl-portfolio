@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const header = `
   font-size: 4.4rem;
@@ -37,8 +37,6 @@ const HeadingMain = styled.h1`
 const HeadingSecondary = styled.span`
   ${header}
 `;
-
-
 
 const HeroHeading = ({
   className, text, minimal, secondary,
