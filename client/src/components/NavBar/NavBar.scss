@@ -1,3 +1,20 @@
+.navbar {
+  @media (max-width: 576px) {
+    padding: 0.25rem 0.5rem !important;
+  }
+  @media (max-width: 576px) {
+    .navbar-toggler {
+      padding: 0.15rem 0.3rem;
+      font-size: 1.2rem;
+      line-height: 0.9;
+      .navbar-toggler-icon {
+          width: 1em;
+          height: 1em;
+        }
+      }
+  }
+}
+
 .main-nav-item {
   counter-increment: item 1;
   font-size: 0.7rem;
@@ -14,6 +31,10 @@
   width: 45px;
   background: url("../../assets/img/logo.png");
   background-size: contain;
+  @media (max-width: 576px) {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 svg.login-icon {
