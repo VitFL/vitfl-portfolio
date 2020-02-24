@@ -6,6 +6,11 @@ import HeroDescription from "./HeroDescription";
 
 const StyledContainer = styled(Container)`
   min-height: calc(100vh - 4rem);
+  @media (max-width: 576px) {
+    min-height: 100%;
+    padding: 1.5rem 0;
+    margin: 1.5rem 0;
+  }
 `;
 
 const StyledButton = styled(Button)`
