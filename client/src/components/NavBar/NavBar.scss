@@ -10,12 +10,27 @@ $menu-bg: #181818;
   background-color: $menu-bg!important;
  }
 
+ .main-nav__list-container {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  z-index: 1;
+   &.open {
+     width: 100%;
+   }
+ }
  .main-nav__list {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
   list-style: none;
-  padding-inline-start: 0;
   z-index: 1;
+  .btn {
+    margin-right: 1rem;
+  }
  }
 
  .main-nav__item {
@@ -102,20 +117,25 @@ $menu-bg: #181818;
   .hamburger {
    display: block;
   }
-  .main-nav__list {
+  .main-nav__list-container {
    overflow: hidden;
    background-color: $menu-bg;
    position: absolute;
-   top: 0;
-   flex-flow: column;
-   align-items: center;
    justify-content: center;
+   top: 0;
    width: 0;
    height: 100vh;
    transition: all 0.5s ease;
-   &.open {
-    width: 100%;
-   }
+    &.open {
+      width: 100%;
+    }
+  }
+  .main-nav__list {
+    flex-flow: column;
+    justify-content: center;
+  .btn {
+    margin-right: 0;
+  }
   }
 
   .main-nav__item {
