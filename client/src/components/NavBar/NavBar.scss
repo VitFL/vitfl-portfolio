@@ -1,30 +1,38 @@
-.navbar {
-  @media (max-width: 576px) {
-    padding: 0.25rem 0.5rem !important;
-  }
-  @media (max-width: 576px) {
-    .navbar-toggler {
-      padding: 0.15rem 0.3rem;
-      font-size: 1.2rem;
-      line-height: 0.9;
-      .navbar-toggler-icon {
-          width: 1em;
-          height: 1em;
-        }
-      }
-  }
-}
+$hamburger-color: hsla(0,0%,100%,.5);
+$hamburger-bg: transparent;
+$menu-bg: #181818;
 
-.main-nav-item {
+#main-nav {
+  display: flex;
+  flex-flow: row-reverse;
+  align-items: center;
+  height: 50px;
+  background-color: $menu-bg!important;
+ }
+
+ .main-nav__list {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding-inline-start: 0;
+  z-index: 1;
+ }
+
+ .main-nav__item {
+  margin-right: 1.5rem;
   counter-increment: item 1;
-  font-size: 0.7rem;
   &::before {
     content: "0" counter(item) ".";
     text-align: right;
     color: var(--accent);
     font-size: 0.7rem;
   }
-}
+  a {
+    color: hsla(0,0%,100%,.5);
+    font-size: 0.7rem;
+    padding-left: .5rem;
+  }
+ }
 
 .navbar-logo {
   height: 45px;
@@ -37,13 +45,80 @@
   }
 }
 
-svg.login-icon {
-  path {
-    fill: var(--white);
+.hamburger {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: $hamburger-bg;
+  position: relative;
+  cursor: pointer;
+  z-index: 100;
+  & span,
+  &:before,
+  &:after {
+   content: " ";
+   display: block;
+   width: 30px;
+   height: 1px;
+   background-color: $hamburger-color;
+   transform: rotate(0);
+   position: absolute;
+   left: 10px;
+   transition: all 300ms ease-in-out;
   }
-  &:hover {
-    path {
-      fill: var(--accent);
-    }
+
+  &:before {
+   top: 16px;
   }
-}
+  & span {
+   top: 25px;
+   opacity: 1;
+  }
+  &:after {
+   bottom: 15px;
+  }
+
+  &.active span {
+   opacity: 0;
+   top: 25px;
+   transform: rotate(90deg);
+  }
+  &.active:before {
+   width: 34px;
+   top: 25px;
+   left: 8px;
+   transform: rotate(45deg);
+  }
+  &.active:after {
+   width: 34px;
+   bottom: 24px;
+   left: 8px;
+   transform: rotate(-45deg);
+  }
+ }
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .hamburger {
+   display: block;
+  }
+  .main-nav__list {
+   overflow: hidden;
+   background-color: $menu-bg;
+   position: absolute;
+   top: 0;
+   flex-flow: column;
+   align-items: center;
+   justify-content: center;
+   width: 0;
+   height: 100vh;
+   transition: all 0.5s ease;
+   &.open {
+    width: 100%;
+   }
+  }
+
+  .main-nav__item {
+   margin: 5px 0;
+  }
+ }
