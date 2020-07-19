@@ -10,8 +10,10 @@ const StyledContainer = styled(Container)`
   min-height: calc(100vh - 4rem);
   @media (max-width: 576px) {
     min-height: 100%;
-    padding: 1.5rem 0;
-    margin: 1.5rem 0;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
